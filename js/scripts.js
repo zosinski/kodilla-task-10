@@ -16,7 +16,8 @@ function Telefon(nazwa, marka, cena, kolor, rozdzielczosc) {
 };
 
 Telefon.prototype.printInfo = function() {
-	console.log('nazwa: ', this.nazwa, ', marka: ', this.marka, ', cena: ', this.cena, ', kolor: ', this.kolor);
+	console.log('nazwa: ', this.nazwa, ', marka: ', this.marka, ', cena: ', this.cena, 'zł , kolor: '
+		, this.kolor, ', rozszerzona gwarancja: ', this.getWarrantyCost(),'zł');
 };
 
 Telefon.prototype.printScreenX = function() {
@@ -25,6 +26,10 @@ Telefon.prototype.printScreenX = function() {
 
 Telefon.prototype.printScreenResolution = function() {
 	console.log('rozdzielczosc ekranu: ' + this.ekran.x + ' x ' + this.ekran.y);
+}
+
+Telefon.prototype.getWarrantyCost = function() {
+	return this.cena * 0.1;
 }
 
 // test
